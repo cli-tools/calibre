@@ -1,0 +1,12 @@
+version: '2.4'
+
+services:
+  manage-users:
+    build: .
+    command: calibre-server --manage-users --userdb user.db
+    image: quay.io/cli-tools/calibre:latest
+    stdin_open: true
+    tty: true
+    volumes:
+      - books:/books
+      - config:/config

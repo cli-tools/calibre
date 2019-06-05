@@ -1,0 +1,16 @@
+version: '2.4'
+
+services:
+  server:
+    build: .
+    image: quay.io/cli-tools/calibre:latest
+    init: true
+    ports:
+      - "8080:8080"
+    volumes:
+      - config:/config
+      - books:/books
+
+volumes:
+  books: {}
+  config: {}
