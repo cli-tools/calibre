@@ -14,3 +14,5 @@ services:
 volumes:
   books: {}
   config: {}
+  cert-etc: {}
+  cert-var-lib: {}

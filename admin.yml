@@ -1,6 +1,13 @@
 version: '2.4'
 
 services:
+  certbot:
+    image: certbot/certbot:latest
+    ports:
+      - "80:80"
+    volumes:
+      - cert-etc:/etc/letsencrypt
+      - cert-var-lib:/var/lib/letsencrypt
   manage-users:
     build: .
     command: calibre-server --manage-users --userdb user.db
