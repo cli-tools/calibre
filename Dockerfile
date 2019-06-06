@@ -6,4 +6,4 @@ RUN curl -s https://download.calibre-ebook.com/linux-installer.sh | sh -
 RUN mkdir /books /config
 WORKDIR /config
 EXPOSE 8080
-CMD calibre-server --access-log /dev/stdout --enable-auth --userdb user.db /books
+CMD calibre-server --access-log /dev/stdout --enable-auth --userdb user.db /books/*
