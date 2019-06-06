@@ -9,7 +9,7 @@ services:
       - cert-etc:/etc/letsencrypt
       - cert-var-lib:/var/lib/letsencrypt
   manage-users:
-    build: .
+    build: srv.d/calibre
     command: calibre-server --manage-users --userdb user.db
     image: quay.io/cli-tools/calibre:latest
     stdin_open: true

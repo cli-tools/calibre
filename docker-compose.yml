@@ -9,8 +9,19 @@ services:
       - cert-etc:/etc/letsencrypt
       - cert-var-lib:/var/lib/letsencrypt
   server:
-    build: .
+    build:
+      context: srv.d/calibre
+      args: [ build=auth ]
     image: quay.io/cli-tools/calibre:latest
+    init: true
+    volumes:
+      - config:/config
+      - books:/books
+  mobile:
+    build:
+      context: srv.d/calibre
+      args: [ build=mobile ]
+    image: quay.io/cli-tools/calibre:mobile
     init: true
     volumes:
       - config:/config
