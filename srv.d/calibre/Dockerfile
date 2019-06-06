@@ -10,7 +10,7 @@ WORKDIR /config
 EXPOSE 8080
 
 FROM base AS auth
-CMD calibre-server --enable-auth --userdb user.db /books/*
+CMD calibre-server --enable-auth --auth-mode=basic --userdb=user.db /books/*
 
 FROM base AS mobile
 CMD calibre-server --disable-local-write /books/*
