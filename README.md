@@ -1,10 +1,16 @@
 # Calibre server in a container
 
-TODO:
+TODO(provisioning):
 
 * Calibre will not start on an empty library
-* Nginx frontend with SSL certificates
+* Manage libraries
 * Automatic certbot certificate renewal
+
+TODO(workflow):
+
+* Support both authenticated and anonymous users simultaneously [reddit]
+
+[reddit]: https://www.reddit.com/r/Calibre/comments/bx5wvq/how_to_enable_both_authenticated_and_anonymous/
 
 ## Setup Calibre users
 
