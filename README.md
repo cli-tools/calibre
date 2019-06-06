@@ -35,3 +35,17 @@ container.
 
 Add the `--dry-run` option to `certbot` to test out the configuration before
 executing the command live.
+
+# Management
+
+# Library organization
+
+See [Universal Decimal Classification].
+
+[Universal Decimal Classification]: https://en.wikipedia.org/wiki/Universal_Decimal_Classification
+
+## File formats
+
+Prefer EPUB over other formats, see [EPUB].
+
+[EPUB]: https://blog.reedsy.com/epub-vs-mobi-vs-pdf/
