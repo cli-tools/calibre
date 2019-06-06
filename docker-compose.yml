@@ -8,6 +8,8 @@ services:
     volumes:
       - cert-etc:/etc/letsencrypt
       - cert-var-lib:/var/lib/letsencrypt
+    environment:
+      - SERVER_NAME
   server:
     build:
       context: srv.d/calibre
