@@ -38,7 +38,7 @@ executing the command live.
 
 # Management
 
-# Library organization
+## Library organization
 
 See [Universal Decimal Classification].
 
@@ -49,3 +49,9 @@ See [Universal Decimal Classification].
 Prefer EPUB over other formats, see [EPUB].
 
 [EPUB]: https://blog.reedsy.com/epub-vs-mobi-vs-pdf/
+
+# Other resources
+
+COPS [COPS].
+
+[COPS]: https://hub.docker.com/r/linuxserver/cops/
