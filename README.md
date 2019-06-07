@@ -5,6 +5,9 @@ TODO(provisioning):
 * Calibre will not start on an empty library
 * Manage libraries
 * Automatic certbot certificate renewal
+* Automatic reload view-only calibre instance with [superfsmon]
+
+[superfsmon]: https://github.com/timakro/superfsmon
 
 TODO(workflow):
 
