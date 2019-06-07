@@ -21,6 +21,13 @@ TODO(provisioning):
 * Library management
 * Automatic certbot certificate renewal
 
+TODO(bugs):
+
+* Online reading does not work on mobile. Calibre server modifies state in
+  the `/books` folder, which triggers a restart of calibre server. 
+  Certainly fixable, but not a priority since epub can still be downloaded the device,
+  and Calibre online reader kind of sucks anyway.
+
 ## Setup Calibre users
 
 Run the interactive `manage-users` admin service.
