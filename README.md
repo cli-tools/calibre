@@ -1,19 +1,25 @@
 # Calibre server in a container
 
-TODO(provisioning):
+This is a fancy system around `calibre-server` to allow both
+authenticated users for content management and an anonymous
+endpoint for mobile users.
 
-* Calibre will not start on an empty library
-* Manage libraries
-* Automatic certbot certificate renewal
-* Automatic reload view-only calibre instance with [superfsmon]
+Some "hacks" are needed in order for this:
+
+* Mobile users are detected using the Agent string. See nginx/conf.d/default.conf.
+* Two backends: one calibre-server for authenticated users and one for anonymous users.
+* The backend for anonymous users is reloaded using [superfsmon] and supervisord as a process manager.
+* The environment variable `CALIBRE_LIBRARIES` is initialized on container entry by `/docker-entrypoint.sh`.
+
+A better solution might appear, follow discussion on [reddit].
 
 [superfsmon]: https://github.com/timakro/superfsmon
-
-TODO(workflow):
-
-* Support both authenticated and anonymous users simultaneously [reddit]
-
 [reddit]: https://www.reddit.com/r/Calibre/comments/bx5wvq/how_to_enable_both_authenticated_and_anonymous/
+
+TODO(provisioning):
+
+* Library management
+* Automatic certbot certificate renewal
 
 ## Setup Calibre users
 
@@ -55,6 +61,6 @@ Prefer EPUB over other formats, see [EPUB].
 
 # Other resources
 
-COPS [COPS].
+[COPS] could potentially be relevant to look at in detail at some point.
 
 [COPS]: https://hub.docker.com/r/linuxserver/cops/
