@@ -9,7 +9,6 @@ services:
       - cert-etc:/etc/letsencrypt
       - cert-var-lib:/var/lib/letsencrypt
     hostname: $HOSTNAME
-    domainname: $DOMAINNAME
   server:
     build:
       context: srv.d/calibre
