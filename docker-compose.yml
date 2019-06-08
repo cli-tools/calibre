@@ -9,7 +9,6 @@ services:
     build:
       context: srv.d/calibre
       args: [ build=$build ]
-    image: quay.io/cli-tools/calibre:latest
     init: true
     volumes:
       - config:/config
@@ -18,7 +17,6 @@ services:
     build:
       context: srv.d/calibre
       args: [ build=$build, service=mobile ]
-    image: quay.io/cli-tools/calibre:mobile
     init: true
     volumes:
       - config:/config
