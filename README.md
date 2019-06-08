@@ -27,6 +27,9 @@ TODO(bugs):
   the `/books` folder, which triggers a restart of calibre server. 
   Certainly fixable, but not a priority since epub can still be downloaded the device,
   and Calibre online reader kind of sucks anyway.
+  
+  *Update*: This seems to be a Sqlite related issue. By ignoring create/delete events on
+  `*.db-journal` files this bug should be avoided.
 
 ## Setup Calibre users
 
