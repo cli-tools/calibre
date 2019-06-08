@@ -1,4 +1,6 @@
-ARG build=auth
+ARG build=production
+ARG service=auth
+
 FROM ubuntu:18.04 AS base
 RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y curl python python-pyqt5 \
@@ -14,7 +16,6 @@ FROM base AS auth
 CMD calibre-server --enable-auth --auth-mode=basic --userdb=user.db $CALIBRE_LIBRARIES
 
 FROM base AS mobile
-
 RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     python-pip supervisor \
@@ -23,4 +24,4 @@ RUN apt-get update \
 COPY conf.d/* /etc/supervisor/conf.d/
 CMD ["/usr/bin/supervisord","-n","-c","/etc/supervisor/supervisord.conf"]
 
-FROM $build
+FROM $service

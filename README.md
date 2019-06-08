@@ -21,18 +21,24 @@ TODO(provisioning):
 * Library management
 * Automatic certbot certificate renewal
 
-TODO(bugs):
+## Setup Docker Compose
 
-* Online reading does not work on mobile. Calibre server modifies state in
-  the `/books` folder, which triggers a restart of calibre server. 
-  Certainly fixable, but not a priority since epub can still be downloaded the device,
-  and Calibre online reader kind of sucks anyway.
-  
-  *Update*: This seems to be a Sqlite related issue. By ignoring create/delete events on
-  `*.db-journal` files this bug should be avoided.
+Be sure to set the following variables, either by placing them in the `.env` file
+together with the `docker-compose.yml` file and be sure to run `docker-compose` from
+the same directory, -OR-, by exporting the environment variables into the shell.
 
-  *Update 2*: This is related to a fs probe. INOTIFY(7) says that Calibre creates
-  a temporary file called `calibre_test_case_sensitivity.txt` in the library directory.
+```
+build=production
+COMPOSE_FILE=docker-compose.yml:production.yml
+HOSTNAME=calibre.example.com
+```
+
+For local development, without SSL certificate, use the following environment:
+
+```
+build=development
+COMPOSE_FILE=docker-compose.yml:development.yml
+```
 
 ## Setup Calibre users
 

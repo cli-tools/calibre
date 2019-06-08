@@ -2,17 +2,13 @@ version: '2.4'
 
 services:
   nginx:
-    build: srv.d/nginx
-    ports:
-     - "443:443"
-    volumes:
-      - cert-etc:/etc/letsencrypt
-      - cert-var-lib:/var/lib/letsencrypt
-    hostname: $HOSTNAME
+    build:
+      context: srv.d/nginx
+      args: [ build=$build ]
   server:
     build:
       context: srv.d/calibre
-      args: [ build=auth ]
+      args: [ build=$build ]
     image: quay.io/cli-tools/calibre:latest
     init: true
     volumes:
@@ -21,7 +17,7 @@ services:
   mobile:
     build:
       context: srv.d/calibre
-      args: [ build=mobile ]
+      args: [ build=$build, service=mobile ]
     image: quay.io/cli-tools/calibre:mobile
     init: true
     volumes:
