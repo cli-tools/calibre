@@ -31,6 +31,9 @@ TODO(bugs):
   *Update*: This seems to be a Sqlite related issue. By ignoring create/delete events on
   `*.db-journal` files this bug should be avoided.
 
+  *Update 2*: This is related to a fs probe. INOTIFY(7) says that Calibre creates
+  a temporary file called `calibre_test_case_sensitivity.txt` in the library directory.
+
 ## Setup Calibre users
 
 Run the interactive `manage-users` admin service.
